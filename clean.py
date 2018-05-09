@@ -4,14 +4,15 @@
 import os
 
 directory = 'figures'
-logfile = 'rus.log'
+logfile = 'test.log'
+enc = 'Latin-1'
 
 for filename in os.listdir(directory):
-    if filename in open(logfile).read():
-        print filename + " in use."
+    if filename in open(logfile, encoding=enc).read():
+        print(filename + ' in use.')
     else:
-        if os.path.isfile(filename):
-            print filename + " not in use - deleting."
-            os.remove(directory + "/" + filename)
+        if os.path.isfile(os.path.join(directory, filename)):
+            print(filename + ' not in use - deleting.')
+            os.remove(os.path.join(directory, filename))
         else:
-            print filename + " is a directory."
+            print(filename + ' is a directory.')
