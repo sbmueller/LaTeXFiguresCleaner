@@ -5,7 +5,7 @@ import os
 
 directory = 'figures'
 logfile = 'test.log'
-enc = 'Latin-1'
+enc = 'utf-8' # For Overleaf, try 'Latin-1' if issues encountered...
 
 for filename in os.listdir(directory):
     if filename in open(logfile, encoding=enc).read():
